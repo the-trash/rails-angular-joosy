@@ -1,0 +1,1 @@
+@log = -> try console.log.apply console, arguments

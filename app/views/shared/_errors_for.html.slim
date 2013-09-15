@@ -1,0 +1,10 @@
+- if obj
+  - if obj.errors.any?
+    .error_explanation
+      h5 При сохранении возникли ошибки:
+      ol
+        - obj.errors.each do |name, message|
+          li
+            b= obj.class.human_attribute_name name
+            |  
+            i= message

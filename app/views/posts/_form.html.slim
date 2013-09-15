@@ -1,0 +1,22 @@
+#forms.panel.panel-default
+  = form_for Post.new do |f|
+    = render partial: 'shared/errors_for', locals: { obj: @post }
+    .panel-heading Forms
+    .panel-body
+      form
+        fieldset
+          legend Post your content
+
+          .form-group
+            = f.label :email, "Your email:"
+            = f.text_field :email, class: 'form-control', type: :email, placeholder: 'Enter email'
+
+          .form-group
+            = f.label :name, "Your name* :"
+            = f.text_field :name, class: 'form-control', placeholder: 'Enter name'
+
+          .form-group
+            = f.label :raw_content, "Your content* :"
+            = f.text_area :raw_content, class: 'form-control', placeholder: 'Enter content', rows: 7
+
+          = f.button 'Send Post', class: 'button btn btn-default'

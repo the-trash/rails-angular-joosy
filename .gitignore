@@ -1,0 +1,26 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+/Gemfile.lock
+/.bundle
+/.rvmrc
+
+# Ignore DB files
+/db/*.db
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/config/database.yml
+
+# Uploaded Files
+/public/uploads/*
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Deploy configs
+config/capistrano/templates/database.production.yml
+
+# OS files
+.DS_Store
+.DS_Store?
+Thumbs.db

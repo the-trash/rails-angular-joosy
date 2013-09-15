@@ -1,0 +1,26 @@
+- content_for :js do
+  = javascript_include_tag :jq_error_explanation
+
+= render partial: 'posts/form'
+
+.panel.panel-default
+  .panel-heading
+    | Posts count: 
+    = @posts.count
+
+- if @posts.blank?
+  .alert.alert-danger Sorry. No posts here!
+- else
+  - @posts.each do |post|
+    .panel.panel-default
+      .panel-heading
+        | From: 
+        = post.name
+      .panel-body
+        p == post.content
+        hr
+          span.text-info
+          = post.name
+          |  (
+          span.text-muted= post.created_at.strftime('%d-%m-%Y %H:%M')
+          |)
