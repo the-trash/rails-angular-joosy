@@ -5,7 +5,7 @@ RailsAngularJoosy::Application.routes.draw do
   resources :angular
   resources :joosy
 
-  get ':action.ng' => 'angular#:action'
+  match ':action.ng' => 'angular#:action', via: [:get, :post]
 
   # Examples
 

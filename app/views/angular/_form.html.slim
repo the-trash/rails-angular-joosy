@@ -1,0 +1,21 @@
+#forms.panel.panel-default
+  = form_tag '#' do
+    .panel-heading Forms
+    .panel-body
+      form
+        fieldset
+          legend Post your content
+
+          .form-group
+            = label_tag :email, "Your email:"
+            = text_field_tag 'email', nil, class: 'form-control', type: :email, placeholder: 'Enter email', 'ng-model' => :email
+
+          .form-group
+            = label_tag :name, "Your name* :"
+            = text_field_tag :name, nil, class: 'form-control', placeholder: 'Enter name', 'ng-model' => :name
+
+          .form-group
+            = label_tag :raw_content, "Your content* :"
+            = text_area_tag :raw_content, nil, class: 'form-control', placeholder: 'Enter content', rows: 7, 'ng-model' => :raw_content
+
+          button class='button btn btn-default' ng-click="submit($event)" Send Post

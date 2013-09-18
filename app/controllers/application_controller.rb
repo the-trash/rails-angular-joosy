@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
   def get_posts_index
     @posts = Post.all.limit(10).order("created_at DESC")
   end
+
+  def post_params
+    params.require(:post).permit(
+      :name,
+      :email,
+      :raw_content
+    )
+  end
 end
