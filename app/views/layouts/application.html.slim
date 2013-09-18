@@ -13,7 +13,7 @@ html
       - if content_for?(:wrapped_yield)
         = yield(:wrapped_yield)
       - else
-        = render partial: 'shared/alerts'
+        = render partial: 'shared/notices'
         = yield
 
   = stylesheet_link_tag    :application, media: :all

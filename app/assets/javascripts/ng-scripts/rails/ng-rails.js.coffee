@@ -1,1 +1,2 @@
-#= require ./ng_error_explanation
+#= require ./ng_rails_errors
+#= require ./ng_rails_notices

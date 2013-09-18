@@ -1,0 +1,7 @@
+.error_explanation ng-controller=:RailsErrors ng-show='visible'
+  h5 При сохранении возникли ошибки:
+  ol
+    li ng-repeat="(err_name, err_messages) in errors"
+      b[] {{err_name}}
+      |  
+      i ng-repeat="txt in err_messages" {{txt}}
