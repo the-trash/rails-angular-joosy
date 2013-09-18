@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     # flash[:notice] = "Alert test Post successfully created"
-    @posts = Post.all.limit(10).order("created_at DESC")
+    get_posts_index
   end
 
   def create
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       redirect_to posts_url,
                   notice: "Post was successfully created."
     else
-      @posts = Post.all.limit(10).order("created_at DESC")
+      get_posts_index      
       render 'posts/index'
     end
   end

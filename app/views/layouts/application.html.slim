@@ -9,10 +9,14 @@ html
   body
     .container
       = render partial: 'layouts/items/header'
-      = render partial: 'shared/alerts'
-      = yield
 
-  = stylesheet_link_tag :application, media: :all
+      - if content_for?(:wrapped_yield)
+        = yield(:wrapped_yield)
+      - else
+        = render partial: 'shared/alerts'
+        = yield
+
+  = stylesheet_link_tag    :application, media: :all
   = javascript_include_tag :application
 
   = yield(:app_js)

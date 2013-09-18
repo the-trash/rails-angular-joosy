@@ -1,5 +1,5 @@
 - flash.each do |type, message|
   - klass = bootstrap_class_for(type)
-  div class="alert #{klass} fade in"
-    button class="close" data-dismiss="alert" ×
+  div class="alert #{klass} fade in" ng-controller=:RailsNotices
+    button class=:close data-dismiss=:alert ng-click="close()" ×
     = message

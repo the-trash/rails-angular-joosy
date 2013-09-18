@@ -1,4 +1,13 @@
+- content_for :wrapped_yield do
+  div lang=:en ng-app=:PublicBoard
+    = render partial: 'shared/alerts'
+    = yield
+
+- content_for :js do
+  = javascript_include_tag 'ng-scripts/application'
+
 - content_for :app_js do
   = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'
+  = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js' 
 
 = render template: "layouts/application"

@@ -1,2 +1,21 @@
-h1 Angular#index
-p Find me in app/views/angular/index.html.slim
+div ng-controller=:PostList
+  .alert.alert-danger ng-show='posts_empty' Sorry. No posts here!
+
+  .panel.panel-default
+    .panel-heading
+      | Posts count: {{ posts_count }}
+
+  .panel.panel-default ng-repeat="post in posts" ng-hide='posts_empty'
+    .panel-heading
+      | From: 
+      | {{post.name}}
+    .panel-body
+      p
+        | {{post.content}}
+      hr
+        span.text-info
+        | {{post.name}}
+        |  (
+        span.text-muted
+          | {{post.created_at}}
+        |)

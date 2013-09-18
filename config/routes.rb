@@ -5,6 +5,8 @@ RailsAngularJoosy::Application.routes.draw do
   resources :angular
   resources :joosy
 
+  get ':action.ng' => 'angular#:action'
+
   # Examples
 
   #   get 'products/:id' => 'catalog#view'
