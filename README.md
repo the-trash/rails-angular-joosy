@@ -1,28 +1,19 @@
-## README
+## Playground for Angular & Joosy studying
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Install
 
-Things you may want to cover:
+```
+git clone git@github.com:the-teacher/rails-angular-joosy.git
 
-* Ruby version
+cd rails-angular-joosy/
 
-* System dependencies
+cp config/database.yml.example config/database.yml
 
-* Configuration
+bundle
 
-* Database creation
+rake db:setup
 
-* Database initialization
+rails s
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+**localhost:3000**
