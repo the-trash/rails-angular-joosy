@@ -1,26 +1,22 @@
 class AngularController < ApplicationController
   layout 'angular'
 
-  def index
-    # flash[:notice] = "Alert test Post successfully created"
-  end
+  def index; end
 
   def list
     render json: get_posts_index
   end
 
   def create
-    @post = Post.new post_params
+    @post = Post.new insured_post_params
 
-    if @post.save
-      response = {
-        post: post_params,
+    render json: if @post.save
+      {
+        post: @post,
         notice: "Post was successfully created."
       }
     else
-      response = { errors: @post.errors.to_json }
+      { errors: @post.errors }
     end
-
-    render json: response
   end
 end

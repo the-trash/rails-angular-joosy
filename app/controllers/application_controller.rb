@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_posts_index
-    @posts = Post.all.limit(10).order("created_at DESC")
+    @posts = Post.all.limit(30).order("created_at DESC")
   end
 
   def post_params
@@ -15,5 +15,11 @@ class ApplicationController < ActionController::Base
       :email,
       :raw_content
     )
+  end
+
+  def insured_post_params
+    post_params
+  rescue
+    {}
   end
 end

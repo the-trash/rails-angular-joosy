@@ -1,0 +1,8 @@
+.error_explanation ng-show='false' ng-click="rails_errors.close()"
+  h5 При сохранении возникли ошибки:
+  ol
+    li ng-repeat="(err_name, err_messages) in rails_errors.errors"
+      p ng-repeat="msg in err_messages"
+        b[] {{err_name}}
+        |  
+        i[] {{msg}}

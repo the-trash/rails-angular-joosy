@@ -1,1 +1,1 @@
-#= require ./ng_error_explanation
+#= require_directory ./

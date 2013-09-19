@@ -1,5 +1,7 @@
 #forms.panel.panel-default
   = form_tag '#' do
+    = render partial: 'angular/form_errors'
+
     .panel-heading Forms
     .panel-body
       form

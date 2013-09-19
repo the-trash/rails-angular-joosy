@@ -1,6 +1,7 @@
 #forms.panel.panel-default
   = form_for Post.new do |f|
-    = render partial: 'shared/errors_for', locals: { obj: @post }
+    = render partial: 'shared/form_errors', locals: { obj: @post }
+
     .panel-heading Forms
     .panel-body
       form

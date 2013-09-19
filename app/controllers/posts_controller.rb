@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def index
-    # flash[:notice] = "Alert test Post successfully created"
     get_posts_index
   end
 
