@@ -1,11 +1,11 @@
-#= require ./rails/ng-rails
+#= require_directory ./rails
 
 #= require_self
-#= require_directory ./services
-#= require_directory ./directives
-#= require_directory ./resources
+#  require_directory ./services
+#  require_directory ./directives
+#  require_directory ./resources
 #= require_directory ./controllers
-#= require_directory ./routes
+#  require_directory ./routes
 
 configureHttp = (httpp) ->
   commonHeaders = httpp.defaults.headers.common

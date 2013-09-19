@@ -1,17 +1,13 @@
 @PostForm = ($scope, $element, $rootScope, $http) ->
   RailsErrorsMixin($scope, $element)
 
+  $scope.post = {}
+
   $scope.submit = (event) ->
-    params =
-      post:
-        email:       $scope.email
-        name:        $scope.name
-        raw_content: $scope.raw_content
-    
     $http
       method: 'POST'
       url:    'create.ng'
-      data:   params
+      data:   { post: $scope.post }
     .success (data, status, headers, config) ->
       post   = data.post
       errors = data.errors
@@ -20,12 +16,14 @@
       if errors
         $scope.rails_errors.errors = errors
       else
-        # $rootScope.$emit 'PostAdd', post
-        # $rootScope.$emit 'RailsNoticesAdd', notice
+        $scope.post = {}
+        $scope.rails_errors.close()
+
+        $rootScope.$emit 'PostAdd', post
+        $rootScope.$emit 'RailsNoticesAdd', notice
 
     .error (data, status) ->
-      log 'Error'
-      log data, status
+      log 'Error', data, status
 
     event.preventDefault()
     false

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  def insured_post_params
+  def quiet_post_params
     post_params
   rescue
     {}

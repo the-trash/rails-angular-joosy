@@ -8,15 +8,17 @@ class AngularController < ApplicationController
   end
 
   def create
-    @post = Post.new insured_post_params
+    @post = Post.new quiet_post_params
 
-    render json: if @post.save
+    response = if @post.save
       {
-        post: @post,
+        post:   @post,
         notice: "Post was successfully created."
       }
     else
       { errors: @post.errors }
     end
+
+    render json: response
   end
 end

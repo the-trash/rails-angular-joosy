@@ -19,5 +19,6 @@
           .form-group
             = f.label :raw_content, "Your content* :"
             = f.text_area :raw_content, class: 'form-control', placeholder: 'Enter content', rows: 7
+            p You can use HTML tags [b, i, a]
 
           = f.button 'Send Post', class: 'button btn btn-default'
